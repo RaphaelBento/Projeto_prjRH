@@ -1,26 +1,29 @@
 
 package br.com.fis.view;
-import java.util.Scanner;
+import br.com.fis.model.Empregado;
+import br.com.fis.utl.Teclado;
+
 
 public class Menu {
     public static void main(String[] args){
-        int caso;
-        System.out.print(" Bem Vindo \n Escolha uma opÃ§Ã£o a seguir:\n 1 - Deprtamento \n 2- FuncionÃ¡rio \n 3 - Gerentes \n 99 - sair");
-        Scanner sc=new Scanner(System.in);
-        caso=sc.nextInt();
-        switch(caso){
+    	   String nome=null;
+           int ID=0;
+           long CPF=0; 
+        	
+    	
+    	Teclado tc=new Teclado();
+    	  Empregado Empre =new Empregado(nome,CPF,ID);
+    
+     System.out.println("Insira o nome do novo empregado : ");
+     tc.setLerString(nome);
+     System.out.println("Insira o Identificador único do Funcionário : ");
+     tc.setLerInt(ID);
+     System.out.println("Insira o CPF do funcionário \n Somente numeros sem ponto ou virgula");
+     tc.setLerLong(CPF);
         
-            case 1:
-                break;
-                
-            case 2:    
-                break;
-                
-            case 3:
-                break;
-            
-            case 4:
-                break;
-        }
-    }
+      
+        
+    
+        System.out.println("Cpf da classe teclado "+tc.getDevoveLong()+" \n CPF da classe Empregado "+Empre.getCPF());
 }
+    }
